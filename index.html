@@ -2,23 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ROHIT Movie Archive</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Movie Archive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 
 <div class="scanlines"></div>
 
 <header>
   <h1 class="glitch" data-text="MOVIE ARCHIVE">MOVIE ARCHIVE</h1>
-
   <p class="subtitle">watched • rated • remembered</p>
-
   <p class="creator">MADE BY <span>ROHIT SHEORAN</span></p>
 </header>
+<!-- Romantic Side Note -->
+<!-- Romantic Note -->
+<div class="love-note">
+  <p>
+    For the girl who feels movies<br>
+    the way others feel love.
+  </p>
+
+  <p>
+    Every story you adore,<br>
+    somehow reminds me of you.
+  </p>
+
+  <span>for my cinephile :♡</span>
+</div>
+
+
 
 <main id="movies"></main>
+
+<!-- PLAYER MODAL -->
+<div id="playerModal" class="player-modal">
+  <div class="player-box">
+    <span class="close-btn" onclick="closePlayer()">✕</span>
+    <div class="player-wrapper">
+      <iframe
+        id="videasyPlayer"
+        src=""
+        frameborder="0"
+        allowfullscreen
+        allow="encrypted-media">
+      </iframe>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
