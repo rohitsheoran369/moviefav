@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* scanline overlay */
+/* scanlines */
 .scanlines {
   position: fixed;
   inset: 0;
@@ -35,41 +35,27 @@ header {
 }
 
 .subtitle {
-  .creator {
-  margin-top: 10px;
-  font-size: 0.85rem;
-  letter-spacing: 3px;
-  color: rgba(0, 255, 255, 0.6);
-  animation: glowPulse 2.5s infinite alternate;
-}
-
-.creator span {
-  color: #00fff7;
-  text-shadow: 
-    0 0 5px rgba(0,255,255,0.8),
-    0 0 15px rgba(0,255,255,0.6);
-}
-
-/* soft neon pulse */
-@keyframes glowPulse {
-  from {
-    opacity: 0.6;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
   opacity: 0.6;
   font-size: 0.9rem;
 }
 
-/* glitch text */
+.creator {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  color: rgba(0,255,255,0.7);
+}
+
+.creator span {
+  color: #00fff7;
+  text-shadow: 0 0 10px rgba(0,255,255,0.8);
+}
+
+/* glitch */
 .glitch {
   font-size: 2.5rem;
   position: relative;
   color: #0ff;
-  animation: flicker 2s infinite alternate;
 }
 
 .glitch::before,
@@ -78,17 +64,16 @@ header {
   position: absolute;
   left: 0;
   width: 100%;
-  overflow: hidden;
 }
 
 .glitch::before {
   color: #f0f;
-  animation: glitch1 2s infinite linear;
+  animation: glitch1 2s infinite;
 }
 
 .glitch::after {
   color: #0f0;
-  animation: glitch2 1.5s infinite linear;
+  animation: glitch2 1.5s infinite;
 }
 
 @keyframes glitch1 {
@@ -103,12 +88,7 @@ header {
   100% { clip-path: inset(0 0 80% 0); }
 }
 
-@keyframes flicker {
-  from { opacity: 0.8; }
-  to { opacity: 1; }
-}
-
-/* movie grid */
+/* grid */
 main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -116,33 +96,29 @@ main {
   padding: 30px;
 }
 
-/* movie card */
+/* card */
 .card {
-  background: rgba(20, 25, 45, 0.8);
-  border: 1px solid rgba(0,255,255,0.2);
+  background: rgba(20,25,45,0.9);
+  border: 1px solid rgba(0,255,255,0.3);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,255,255,0.15);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  animation: fadeUp 0.6s ease forwards;
+  cursor: pointer;
+  transition: all 0.4s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.03) rotateX(5deg);
-  box-shadow: 0 0 30px rgba(0,255,255,0.6);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0,255,255,0.7);
 }
 
-/* poster */
 .card img {
   width: 100%;
-  display: block;
 }
 
-/* content */
 .card h3 {
   color: #0ff;
   padding: 10px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .card p {
@@ -151,22 +127,92 @@ main {
   opacity: 0.75;
 }
 
-/* animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* modal */
+.player-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.player-box {
+  width: 90%;
+  max-width: 900px;
+  border: 1px solid cyan;
+  box-shadow: 0 0 30px cyan;
+  background: #000;
+  position: relative;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.player-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: cyan;
+  font-size: 28px;
+  cursor: pointer;
+}
+.love-note {
+  margin: 20px auto;
+  max-width: 300px;
+  padding: 16px 18px;
+  text-align: center;
+  background: rgba(10, 15, 30, 0.75);
+  border: 1px solid rgba(255, 79, 216, 0.4);
+  border-radius: 14px;
+  color: #ffd6f0;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  box-shadow: 0 0 20px rgba(255, 79, 216, 0.25);
+  animation: softGlow 3s infinite alternate;
+}
+
+.love-note span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.65rem;
+  opacity: 0.75;
+  color: #ff9ee6;
+}
+
+/* Desktop enhancement: float to side */
+@media (min-width: 900px) {
+  .love-note {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 240px;
+    margin: 0;
+    text-align: left;
+    border-radius: 0;
+    border-left: 2px solid #ff4fd8;
   }
 }
 
-/* mobile */
-@media (max-width: 600px) {
-  .glitch {
-    font-size: 1.8rem;
+/* glow animation */
+@keyframes softGlow {
+  from {
+    box-shadow: 0 0 15px rgba(255, 79, 216, 0.2);
+  }
+  to {
+    box-shadow: 0 0 35px rgba(255, 79, 216, 0.5);
   }
 }
 
