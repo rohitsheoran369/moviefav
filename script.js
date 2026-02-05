@@ -25,7 +25,7 @@ Gone Girl
 Good Will Hunting
 Goodfellas
 Gravity
-Happiness
+ 
 Inception
 Inglourious Basterds
 Interstellar
@@ -40,11 +40,11 @@ Mad Max: Fury Road
 Memories of Murder
 Memento
 Moneyball
-Moonlight
+ 
 Mulholland Drive
 No Country for Old Men
 Ocean's Eleven
-Oldboy
+Oldboy 2002
 Once Upon a Time in Hollywood
 Oppenheimer
 Parasite
@@ -58,7 +58,7 @@ The Favourite
 The Godfather
 The Green Mile
 The Lord of the Rings: The Fellowship of the Ring
-The Master
+ 
 The Matrix
 The Shawshank Redemption
 The Social Network
@@ -90,3 +90,4 @@ movieList.forEach(title => {
       `;
     });
 });
+
