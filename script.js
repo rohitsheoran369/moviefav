@@ -1,6 +1,141 @@
 const API_KEY = "d5585837c92af34f108abad6a1e84115";
 
 const movieList = `
+Pulp Fiction
+Se7en
+The Silence of the Lambs
+Saving Private Ryan
+The Prestige
+The Truman Show
+Catch Me If You Can
+Léon: The Professional
+American Beauty
+The Pianist
+The Sixth Sense
+
+Black Swan
+Shutter Island
+Donnie Darko
+Prisoners
+Nightcrawler
+Enemy
+Requiem for a Dream
+The Lighthouse
+Her
+Ex Machina
+
+Manchester by the Sea
+Blue Valentine
+Marriage Story
+Call Me by Your Name
+The Florida Project
+Sound of Metal
+Moonrise Kingdom
+The Grand Budapest Hotel
+
+Heat
+Scarface
+The Usual Suspects
+Nocturnal Animals
+Drive
+The Irishman
+Carlito’s Way
+Mystic River
+The Big Short
+
+City of God
+The Lives of Others
+Incendies
+Pan’s Labyrinth
+Cinema Paradiso
+The Hunt
+Burning
+Shoplifters
+
+Blade Runner
+Blade Runner 2049
+Minority Report
+Children of Men
+Gattaca
+Moon
+District 9
+A Clockwork Orange
+
+Spirited Away
+Princess Mononoke
+Your Name
+Grave of the Fireflies
+Inside Out
+Coco
+The Incredibles
+
+Django Unchained
+Reservoir Dogs
+Once Upon a Time in America
+Casino
+Raging Bull
+The Revenant
+Birdman
+No Country for Old Men
+Fargo
+True Grit
+
+The Shining
+Psycho
+Get Out
+Us
+It Follows
+The Exorcist
+Rosemary’s Baby
+The Witch
+
+In the Mood for Love
+Chungking Express
+Yi Yi
+Tokyo Story
+Oldboy
+Memories of Murder
+Decision to Leave
+
+Rocky
+Creed
+Warrior
+Million Dollar Baby
+
+The Curious Case of Benjamin Button
+The Theory of Everything
+Slumdog Millionaire
+Life of Pi
+The King’s Speech
+
+Interstellar
+Inception
+Tenet
+Arrival
+Gravity
+2001: A Space Odyssey
+
+The Dark Knight Rises
+Batman Begins
+Logan
+Joker
+Spider-Man: Into the Spider-Verse
+
+The Social Network
+Steve Jobs
+Moneyball
+The Founder
+
+The Breakfast Club
+Ferris Bueller’s Day Off
+Dead Poets Society
+
+Toy Story 2
+Toy Story 3
+Up
+WALL-E
+Ratatouille
+Finding Nemo
 12 Angry Men
 12 Years a Slave
 A Beautiful Mind
@@ -98,5 +233,6 @@ movieList.forEach(title => {
     })
     .catch(err => console.error("TMDB error:", err));
 });
+
 
 
